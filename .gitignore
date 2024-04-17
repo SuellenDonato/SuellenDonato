@@ -1,0 +1,34 @@
+import javax.swing.JOptionPane;
+ 
+public class Main {
+    public static void main(String[] args) {
+        int[] N = new int[10]; 
+        int value = getInput(); 
+        N[0] = value; 
+        
+ 
+        
+        for (int i = 1; i < N.length; i++) {
+            N[i] = N[i - 1] * 2;
+        }
+ 
+        
+        System.out.println("Valores do vetor N:");
+        for (int num : N) {
+            System.out.println(num);
+        }
+    }
+ 
+    
+    public static int getInput() {
+        int value;
+        do {
+            String input = JOptionPane.showInputDialog("Digite um valor inteiro menor ou igual a 20:");
+            value = Integer.parseInt(input);
+            if (value > 20) {
+                JOptionPane.showMessageDialog(null, "Por favor, digite um valor menor ou igual a 20.");
+            }
+        } while (value > 20);
+        return value;
+    }
+}
